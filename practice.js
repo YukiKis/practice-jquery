@@ -306,3 +306,106 @@ $("button").click(function(){
 $("button").click(function(){
   $("#div1").width(599).height(5999);
 })
+
+$(document).ready(function(){
+  $("span").parent();
+})
+
+$(document).ready(function(){
+  $("span").parents();
+})
+
+$(document).ready(function(){
+  $("span").parentUntil("div");
+})
+
+$(document).ready(function(){
+  $("div").children();
+})
+
+$(document).ready(function(){
+  $("div").children("p.first");
+})
+
+$(document).ready(function(){
+  $("div").find("span");
+})
+
+$(document).ready(function(){
+  $("div").find("*");
+})
+
+$(document).ready(function(){
+  $("h2").siblings();
+})
+
+$(document).ready(function(){
+$("h2").siblings("p");  
+})
+
+$(document).ready(function(){
+  $("h2").next();
+})
+
+$(document).ready(function(){
+  $("h2").nextAll();
+})
+
+$(document).ready(function(){
+  $("h2").nextUntil("h6");
+})
+
+$(document).ready(function(){
+  $("div").first();
+})
+
+$(document).ready(function(){
+  $("div").last();
+})
+
+$(document).ready(function(){
+  $("p").eq(1);
+})
+
+$(document).ready(function(){
+  $("p").filter(".intro");
+})
+
+$(document).ready(function(){
+  $("p").not(".intro");
+})
+
+$("#div").load("demo_test.txt")
+
+$("#div1").load("demo_test.txt #p1");
+
+$("button").click(function(){
+  $("#div1").load("demo_test.txt", function(responseTxt, statusTxt, xhr){
+    if(statusTxt == "success"){
+      alert("External content loaded susseccfully");
+    }
+    if(statusTxt == "error"){
+      alert("Error: " + xhr.status + ": " + xhr.statusText);
+    }
+  })
+})
+
+$(document).ready(function(){
+  $("button").on("click", function(){
+    $.get("demo_test.asp", function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    })
+  })
+})
+
+$(document).ready(function(){
+  $("button").on("click", function(){
+    $.post("demo_test._post.asp", 
+    {
+      name: "Donald",
+      city: "DuckBurg"
+    }, function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    })
+  })
+})
